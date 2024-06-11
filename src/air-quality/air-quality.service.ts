@@ -15,6 +15,6 @@ export class AirQualityService {
   }
 
   async findAll(): Promise<AirQuality[]> {
-    return this.airQualityModel.find().exec();
+    return this.airQualityModel.find().sort({ time: 'asc' }).exec();
   }
 }
