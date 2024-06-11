@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AirQualityModule } from './air-quality/air-quality.module';
+import { WaterQualityModule } from './water-quality/water-quality.module';
+import { NoiseModule } from './noise/noise.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { AirQualityModule } from './air-quality/air-quality.module';
       inject: [ConfigService],
     }),
     AirQualityModule,
+    WaterQualityModule,
+    NoiseModule,
   ],
 })
 export class AppModule {}
